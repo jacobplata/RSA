@@ -12,8 +12,6 @@ LUT_decryption = dict()
 def encrypt_message():
     n = int(entryn.get())
     e = int(entrye.get())
-    print n
-    print e
     message = texte.get(1.0, END)
     encrypted_msg = ""
     for i in message:
@@ -26,7 +24,7 @@ def encrypt_message():
             encrypted_msg += unichr(encrypt)
     clear_text()
     texte.insert(END, encrypted_msg)
-    
+    tkMessageBox.showinfo("Encryption", "Message Encrypted!")
     
 def clear_text():
     texte.delete(1.0, END)
@@ -50,6 +48,7 @@ def decrypt_message():
             decrypted_msg += unichr(decrypt)
     clear_text2()
     textd.insert(END, decrypted_msg)
+    tkMessageBox.showinfo("Decryption", "Message Decrypted!")
     
 def openfileE():
     clear_text()
